@@ -1,0 +1,11 @@
+"Breakfast Main Course": breakfast == true && mainCourse == true
+"Breakfast Condiment": foodType == Chutneys
+"Breakfast Nuts": Manually add as an array
+"Breakfast Fruits": Fruits from Ingredient database
+"Breakfast Addon": foodType == Chutneys, Spice Chutneys, Liquids && breakfast == true
+"Lunch Main Course": lunch == true && mainCourse == true
+"Lunch Condiment": foodType == Veg dals, leafy dals, legume curries, veg curries, leafy curries, other curries
+"Liquids": foodType == Liquids && lunch == true
+"Lunch Addon": foodType == Veg Fries, Leafy Fries, other Fries, Veg Chutneys, Leafy Chutneys, Veg curries, Leafy curries, other curries
+"Snacks": Snacks == true
+"Supper mainCourse": breakfast == true && lunch == true && mainCourse == true
