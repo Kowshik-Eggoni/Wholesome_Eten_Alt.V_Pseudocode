@@ -13,8 +13,12 @@ let snackQty;
 let mealCalories = 0.15*targetCalories;
 //Here we allocate a portion of daily calories for the snack
 
-let generate_Snack = () => {
+let pick_Snack = () => {
     snack = Pick randomly from snacks || breakfast fruits;
+}
+//Randomly pick a snack from snacks or breakfast fruits 
+
+let generate_Snack = () => {
     if (snack = "snacks") {
         snackQty = mealCalories/energyPerServing;
         //fetch the units from recipe
@@ -28,3 +32,4 @@ let generate_Snack = () => {
         }
     }  
 }
+//Use this function to calculate snacks quantity. Both for randomly picking snack and user selected snack (swapping)
