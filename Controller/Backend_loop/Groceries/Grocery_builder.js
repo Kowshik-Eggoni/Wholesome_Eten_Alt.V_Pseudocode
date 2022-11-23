@@ -31,13 +31,13 @@ let meatEggsFinder = () => {
 //Use this function to run through all the ingredients in a recipe and identify fruits, vegetables, meat, and eggs among them and their quantities.
 //Store them somewhere so that we can send them as push notifications and display as a user-specific checklist
 
-if (today = "Mon" || "Wed" ) {
+if (today = "Sun" || "Tue" ) {
     run cron.job @ 12:01 AM
     for (let i = 0; i < [Tomorrow + Day after tomorrow meals].length; i++) {
         freshProduceFinder();
     }
-//We are showing grocery list for two days for fruits and vegetables. Automatically generate these lists at 12:01 AM on Mondays and Wednesdays
-} else if (today = "Fri") {
+//We are showing grocery list for two days for fruits and vegetables. Automatically generate these lists at 12:01 AM on Sundays and Tuesdays
+} else if (today = "Thu") {
     run cron.job @ 12:01 AM
     for (let i = 0; i < [Tomorrow + next 2 days meals].length; i++) {
         freshProduceFinder(); 
@@ -50,7 +50,7 @@ if (today = "Sat") {
     for (let i = 0; i < [Tomorrow + 6 days meals].length; i++) {
         meatEggsFinder();    
     }
-//On Mondays we generate the fruits and vegetables grocery lists for 3 days
+//On Saturdays we generate the fruits and vegetables grocery lists from Sunday thru next saturday
 }
 
 // Convert all the quantities to grams;

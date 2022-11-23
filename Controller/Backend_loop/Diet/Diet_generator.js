@@ -19,5 +19,5 @@ let pick_Diet = () => {
         For each day, Add snack, snackQty, snackCals to the DB; 
 }
 
-/*This function is used to generate diet for a typical day. You can call it once a day as a cron.job 
+/*This function is used to generate diet for a full day. You can call it once a day as a cron.job 
 or several times a day when on-boarding a new or returning user*/
