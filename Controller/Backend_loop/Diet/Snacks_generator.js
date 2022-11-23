@@ -8,6 +8,7 @@ Get targetCalories;
 
 let snack;
 let snackQty;
+let snackCals;
 //Here we declare snack to be used in the daily diet
 
 let mealCalories = 0.15*targetCalories;
@@ -31,5 +32,6 @@ let generate_Snack = () => {
             round to the nearest half;
         }
     }  
+    snackCals = snackQty*energyPerServing;
 }
 //Use this function to calculate snacks quantity. Both for randomly picking snack and user selected snack (swapping)

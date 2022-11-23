@@ -34,13 +34,17 @@ let ratioMainCourse;
 let mainCourseLimit;
 let breakfastMainCourseType;
 let breakfastCondiment2Type;
+let MainCourseCals;
+let CondimentCals;
+let Condiment2Cals;
+let AddOnCals;
 //These parameters are used to calculate all the breakfast quantities
 
 let pick_breakfastCondiment2 = (mainCourseQty,ratioMainCourse = 1,mainCourseLimit, breakfastCondiment2, breakfastCondiment2Type) => {
   if (mainCourseQty = mainCourseLimit) {
     breakfastCondiment2 = Randomly pick an ingredient from type: breakfastCondiment2Type (fetch from Ingredient DB);
     }
-    breakfastCondiment2Qty = ratioMainCourse*mealCalories - mainCourseLimit*(calories of breakfastCondiment);
+    breakfastCondiment2Qty = ratioMainCourse*mealCalories - mainCourseLimit*(calories of breakfastMainCourse);
 }
 
 let pick_mainCourseQty = (mainCourseQty,mainCourseLimit) => {
@@ -71,7 +75,7 @@ let generate_Breakfast = (breakfastMainCourse, breakfastCondiment = "", breakfas
 
        switch (breakfastMainCourseType) {
         case "Idlis" || "Dosas" :
-          mainCourseQty = 0.5*mealCalories/calories per serving of breakfastMainCourse;
+        mainCourseQty = 0.5*mealCalories/calories per serving of breakfastMainCourse;
           //fetch calories of the breakfastMainCourse from the recipes Database
           //Half of the breakfast calories are allocated for the main course
           pick_mainCourseQty (mainCourseQty, 4);
@@ -83,7 +87,7 @@ let generate_Breakfast = (breakfastMainCourse, breakfastCondiment = "", breakfas
           //Half of the breakfast calories are allocated for the condiments
           pick_breakfastCondiment2 (mainCourseQty, 0.5, 4, breakfastCondiment2, "nuts");
             break;
-        case "Salads" || "Soups" || "Upmas" :
+        case "Salads" || "Soups" || "Upmas" : 
           mainCourseQty = mealCalories/calories per serving of breakfastMainCourse;
           pick_mainCourseQty (mainCourseQty, 3);
           pick_breakfastCondiment2 (mainCourseQty, 1, 3, breakfastCondiment2, "nuts");
@@ -101,6 +105,9 @@ let generate_Breakfast = (breakfastMainCourse, breakfastCondiment = "", breakfas
           Round quantity to the nearest quarter cups 
           break;
       }
+      MainCourseCals = mainCourseQty*calories per serving;
+      CondimentCals = breakfastCondimentQty*calories per serving;
+      Condiment2Cals = breakfastCondiment2Qty*calories per serving;
 }
 
 let addon_Breakfast = (breakfastMainCourseType, breakfastAddOn, breakfastAddOnQty) => {
@@ -119,6 +126,8 @@ let addon_Breakfast = (breakfastMainCourseType, breakfastAddOn, breakfastAddOnQt
       mainCourseQty = 0.8*mainCourseQty; (Reduce the breakfast main course quantity to 80% of its previous value)
       break;
   }
+  CondimentCals = breakfastCondimentQty*calories per serving;
+  AddOnCals = breakfastAddOnQty*calories per serving;
 }
 
 

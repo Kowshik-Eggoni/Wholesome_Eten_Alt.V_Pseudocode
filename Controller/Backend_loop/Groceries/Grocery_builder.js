@@ -33,21 +33,21 @@ let meatEggsFinder = () => {
 
 if (today = "Mon" || "Wed" ) {
     run cron.job @ 12:01 AM
-    for (let i = 0; i < [Today+Tomorrow meals].length; i++) {
-        groceryFinder();
+    for (let i = 0; i < [Tomorrow + Day after tomorrow meals].length; i++) {
+        freshProduceFinder();
     }
 //We are showing grocery list for two days for fruits and vegetables. Automatically generate these lists at 12:01 AM on Mondays and Wednesdays
 } else if (today = "Fri") {
     run cron.job @ 12:01 AM
-    for (let i = 0; i < [Today+ Tomorrow+ Day after tomorrow meals].length; i++) {
-        groceryFinder(); 
+    for (let i = 0; i < [Tomorrow + next 2 days meals].length; i++) {
+        freshProduceFinder(); 
     }
 //On Fridays we generate the fruits and vegetables grocery lists for 3 days
 }
 
-if (today = "Mon") {
-    run cron.job @ 12:01 AM
-    for (let i = 0; i < [Today+Tomorrow meals].length; i++) {
+if (today = "Sat") {
+    run cron.job @ 12:01 PM
+    for (let i = 0; i < [Tomorrow + 6 days meals].length; i++) {
         meatEggsFinder();    
     }
 //On Mondays we generate the fruits and vegetables grocery lists for 3 days

@@ -12,6 +12,7 @@ Get targetCalories;
 let lunchMainCourse;
 let lunchCondiment;
 let lunchCondiment2;
+let lunchAddOn;
 //Here we declare all the main course and condiments that are used to choose the daily diet
 
 let mealCalories = 0.4*targetCalories;
@@ -20,8 +21,13 @@ let mealCalories = 0.4*targetCalories;
 let lunchMainCourseQty;
 let lunchCondimentQty;
 let lunchCondiment2Qty;
+let lunchAddOnQty;
 let mainCourseLimit;
 let lunchMainCourseType;
+let MainCourseCals;
+let CondimentCals;
+let Condiment2Cals;
+let AddOnCals;
 //These parameters are used to calculate all the breakfast quantities
 
 let pick_Lunch = () => {
@@ -59,8 +65,11 @@ let generate_Lunch = (lunchMainCourse, lunchCondiment = "", lunchCondiment2 = ""
             mainCourseQty = 1*mealCalories/calories per serving of lunchMainCourse;
             pick_mainCourseQty (mainCourseQty, 4);
             break;
-    }  
-}  
+    } 
+    MainCourseCals = mainCourseQty*calories per serving;
+    CondimentCals = lunchCondimentQty*calories per serving;
+    Condiment2Cals = lunchCondiment2Qty*calories per serving;  
+  }  
 
 let addon_Lunch = (lunchMainCourseType, lunchAddOn, lunchAddOnQty) => {
     //This function is for the user to pick an addon condiment for specific breakfasts
@@ -81,6 +90,8 @@ let addon_Lunch = (lunchMainCourseType, lunchAddOn, lunchAddOnQty) => {
           mainCourseQty = 0.9*mealCalories/calories per serving of lunchCondiment;
           break;
       }
+      CondimentCals = lunchCondimentQty*calories per serving;
+      AddOnCals = lunchAddOnQty*calories per serving;
     }
 
 
