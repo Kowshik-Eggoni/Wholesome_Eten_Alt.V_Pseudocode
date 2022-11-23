@@ -28,7 +28,6 @@ let meatEggsFinder = () => {
     }
 }
 
-
 //Use this function to run through all the ingredients in a recipe and identify fruits, vegetables, meat, and eggs among them and their quantities.
 //Store them somewhere so that we can send them as push notifications and display as a user-specific checklist
 
@@ -53,7 +52,6 @@ if (today = "Mon") {
     }
 //On Mondays we generate the fruits and vegetables grocery lists for 3 days
 }
-
 
 // Convert all the quantities to grams;
 // Remove duplicates and add up quantities;
