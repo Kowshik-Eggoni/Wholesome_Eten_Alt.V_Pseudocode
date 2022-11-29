@@ -23,12 +23,6 @@ let premium_Extension = () => {
         pick_Diet();
     //Pick diet for non-premium days (14 - premium days)     
     }
-    for (let i = 0; i < 3; i++) {
-        freshProduceFinder();
-    }
-    for (let i = 0; i < 7 - (this.day); i++) {
-        meatEggsFinder();
-    }
 }
 //This is for a user who is extending their premium membership
 
